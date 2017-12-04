@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>timer</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
+<body>
+	<div id='headBanner'>
+		<h1>Timer</h1>
+	</div>
+
+	<div id='lengthHeader'>
+			<div class='lengthTitle'>BREAK LENGTH</div>
+			<div class='lengthTitle'>SESSION LENGTH</div>
+	</div>
+
+	<div id='timerLength'>
+		<div id='breakLength'>
+			<div class='clickableButton decrease' arithm='-' type='breakTime'>
+				-
+			</div>
+			<div id='breakTime' class='amount' value='5'>
+				5
+			</div>
+			<div class='clickableButton increase ' arithm='+' type='breakTime'>
+				+
+			</div>
+		</div>
+
+		<div id='SessionLength'>
+			<div class='clickableButton decrease' arithm='-' type='sessionTime'>
+				-
+			</div>
+			<div id='sessionTime' class='amount' value='10'>
+				10
+			</div>
+			<div class='clickableButton increase' arithm='+' type='sessionTime'>
+				+
+			</div>
+		</div>
+	</div>
+
+	<div id='timerDiv' class='clickableButton' arithm='' type='startStop'>
+		<div id='timerBackgroundColor' class='sessionBackgroundColor'></div>
+		<h2 id='timerHeader'>Session</h2>
+		<p id='currentTime'>10</p>
+	</div>
+
+	<div class='clickableButton' id='resetButton' type='reset'>
+		Reset
+	</div>
+
+
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
