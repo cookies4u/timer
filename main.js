@@ -1,8 +1,7 @@
 var myApp = {
 
     initializeVars: function() {
-        this.sessionTime = 10; // initial session time
-        this.breakTime = 5; // initial break time
+        
         this.countDownTime = myApp.sessionTime; // set countdown timer to initial session
         this.value = ''; // based on html value of current break or session
         this.userInput = ['', '']; // based on html button type and arithmatic type
@@ -13,7 +12,12 @@ var myApp = {
     },
 
     initializeTimer: function() {
+        this.sessionTime = 10; // initial session time. these vars don't want to reset later
+        this.breakTime = 5; // initial break time. these vars don't want to reset later
+
         myApp.initializeVars();
+
+
 
         console.log('#1');
         $(document).on('click', '.clickableButton', function() { // listening to click type
@@ -128,6 +132,8 @@ myApp.logic = {
         $('#timerBackgroundColor').removeClass('breakBackgroundColor').addClass('sessionBackgroundColor');
         document.getElementById("timerBackgroundColor").style.height = '0%';
         document.getElementById("currentTime").innerHTML = $('#sessionTime').attr('value');
+        myApp.sessionTime = $('#sessionTime').attr('value');
+        myApp.breakTime = $('#breakTime').attr('value');
     }
 
 };
