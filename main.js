@@ -54,6 +54,7 @@ myApp.logic = {
             var value = timerId.attr('value'); // get dom element value
             // update current value of slected div
             value = value + clickArithm + '1';
+
             if ( eval(value) > 0) { // timer cannot go below zero
                 value = eval(value); // caculating
                 timerId.attr('value', value); // updating the attribute value
@@ -61,8 +62,13 @@ myApp.logic = {
                 console.log('#5.1')
                 if ( clickType === 'sessionTime' ) { // updating timer view before timer starts
                     console.log('#5.2');
+                    myApp.sessionTime = value; // updating the session vlaue
+                    myApp.countDownTime = myApp.sessionTime;
                     document.getElementById("currentTime").innerHTML = value;
-                }   
+                }
+                else { // clicktype breakTime
+                    myApp.breakTime = value;
+                }
             }
         }
         
@@ -121,7 +127,7 @@ myApp.logic = {
         document.getElementById("timerHeader").innerHTML = 'Session';
         $('#timerBackgroundColor').removeClass('breakBackgroundColor').addClass('sessionBackgroundColor');
         document.getElementById("timerBackgroundColor").style.height = '0%';
-        document.getElementById("currentTime").innerHTML = myApp.countDownTime;
+        document.getElementById("currentTime").innerHTML = $('#sessionTime').attr('value');
     }
 
 };
